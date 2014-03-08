@@ -1,9 +1,8 @@
 $LOAD_PATH << File.join(File.dirname(__FILE__), 'lib')
-require 'shoulda/matchers/version'
 
 Gem::Specification.new do |s|
   s.name        = "shoulda-kept-assign-to"
-  s.version     = Shoulda::Matchers::VERSION.dup
+  s.version     = '1.0.0'
   s.authors     = ["Angel Irizarry", "Ben Sedat"]
   s.date        = Time.now.strftime("%Y-%m-%d")
   s.email       = "engineers@tinfoilsecurity.com"
