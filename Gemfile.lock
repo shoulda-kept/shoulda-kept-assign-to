@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    shoulda-kept-assign-to (1.0.0)
+    shoulda-kept-assign-to (1.0.1)
       shoulda-matchers (>= 2.1.0)
 
 GEM

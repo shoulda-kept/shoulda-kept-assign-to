@@ -2,7 +2,7 @@ $LOAD_PATH << File.join(File.dirname(__FILE__), 'lib')
 
 Gem::Specification.new do |s|
   s.name        = "shoulda-kept-assign-to"
-  s.version     = '1.0.0'
+  s.version     = '1.0.1'
   s.authors     = ["Angel Irizarry", "Ben Sedat"]
   s.date        = Time.now.strftime("%Y-%m-%d")
   s.email       = "engineers@tinfoilsecurity.com"
