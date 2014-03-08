@@ -27,10 +27,4 @@ group :test do
   gem "shoulda-kept-assign-to"
 end
 
-# `rspec-rails` needs to be in the development group so that Rails generators work.
-group :development, :test do
-  gem "rspec-rails", "~> 2.12"
-end
-```
-
 Shoulda will automatically include matchers into the appropriate example groups.
