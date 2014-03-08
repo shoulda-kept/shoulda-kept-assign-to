@@ -1,7 +1,7 @@
 PATH
-  remote: .
+  remote: ../
   specs:
-    shoulda-kept-assign-to (1.0.0)
+    shoulda-kept-assign-to (1.0.1)
       shoulda-matchers (>= 2.1.0)
 
 GEM
@@ -48,7 +48,10 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    metaclass (0.0.4)
     mime-types (1.25.1)
+    mocha (1.0.0)
+      metaclass (~> 0.0.1)
     multi_json (1.9.0)
     polyglot (0.3.4)
     rack (1.4.5)
@@ -109,7 +112,8 @@ PLATFORMS
 DEPENDENCIES
   appraisal
   bundler
-  rails (~> 3)
+  mocha
+  rails (~> 3.0)
   rake
   rspec-rails
   shoulda-kept-assign-to!
