@@ -19,7 +19,7 @@ module Shoulda # :nodoc:
       end
 
       class AssignToMatcher # :nodoc:
-        attr_reader :failure_message_for_should, :failure_message_for_should_not
+        attr_reader :failure_message, :failure_message_when_negated
 
         def initialize(variable)
           @variable    = variable.to_s
@@ -64,12 +64,12 @@ module Shoulda # :nodoc:
 
         def assigned_value?
           if @controller.instance_variables.map(&:to_s).include?("@#{@variable}")
-            @failure_message_for_should_not =
+            @failure_message_when_negated =
               "Didn't expect action to assign a value for @#{@variable}, " <<
               "but it was assigned to #{assigned_value.inspect}"
             true
           else
-            @failure_message_for_should =
+            @failure_message =
               "Expected action to assign a value for @#{@variable}"
             false
           end
@@ -78,12 +78,12 @@ module Shoulda # :nodoc:
         def kind_of_expected_class?
           if @options.key?(:expected_class)
             if assigned_value.kind_of?(@options[:expected_class])
-              @failure_message_for_should_not =
+              @failure_message_when_negated =
                 "Didn't expect action to assign a kind of #{@options[:expected_class]} " <<
                 "for #{@variable}, but got one anyway"
               true
             else
-              @failure_message_for_should =
+              @failure_message =
                 "Expected action to assign a kind of #{@options[:expected_class]} " <<
                 "for #{@variable}, but got #{assigned_value.inspect} " <<
                 "(#{assigned_value.class.name})"
@@ -97,12 +97,12 @@ module Shoulda # :nodoc:
         def equal_to_expected_value?
           if @options[:check_value]
             if @options[:expected_value] == assigned_value
-              @failure_message_for_should_not =
+              @failure_message_when_negated =
                 "Didn't expect action to assign #{@options[:expected_value].inspect} " <<
                 "for #{@variable}, but got it anyway"
               true
             else
-              @failure_message_for_should =
+              @failure_message =
                 "Expected action to assign #{@options[:expected_value].inspect} " <<
                 "for #{@variable}, but got #{assigned_value.inspect}"
               false

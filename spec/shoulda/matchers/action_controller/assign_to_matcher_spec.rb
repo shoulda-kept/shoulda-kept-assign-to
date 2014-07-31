@@ -12,7 +12,7 @@ describe Shoulda::Matchers::ActionController::AssignToMatcher do
     matcher = assign_to(:var).with_kind_of(Fixnum)
     matcher.matches?(controller)
 
-    matcher.failure_message_for_should.should =~ /kind of Fixnum for var, but got.*\(WrongClass\)$/
+    matcher.failure_message.should =~ /kind of Fixnum for var, but got.*\(WrongClass\)$/
   end
 
   context 'a controller that assigns to an instance variable' do
