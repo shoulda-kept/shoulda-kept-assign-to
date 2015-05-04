@@ -96,7 +96,7 @@ module Shoulda # :nodoc:
 
         def equal_to_expected_value?
           if @options[:check_value]
-            if @options[:expected_value] == assigned_value
+            if @options[:expected_value] === assigned_value
               @failure_message_when_negated =
                 "Didn't expect action to assign #{@options[:expected_value].inspect} " <<
                 "for #{@variable}, but got it anyway"
