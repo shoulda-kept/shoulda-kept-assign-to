@@ -50,8 +50,12 @@ describe Shoulda::Matchers::ActionController::AssignToMatcher do
       controller.should_not assign_to(:var).in_context(self).with { expected }
     end
 
+    it 'accepts assigning a matcher for the value to that variable' do
+      controller.should assign_to(:arr).with(match_array(['value', 'other']))
+    end
+
     def controller
-      build_response { @var = 'value' }
+      build_response { @var = 'value'; @arr = ['other', 'value'] }
     end
   end
 
