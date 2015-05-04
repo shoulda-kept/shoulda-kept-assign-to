@@ -3,7 +3,7 @@ By [Tinfoil Security](http://tinfoilsecurity.com/)
 
 [![Build Status](https://travis-ci.org/tinfoil/shoulda-kept-assign-to.svg?branch=master)](https://travis-ci.org/tinfoil/shoulda-kept-assign-to)
 
-Shoulda-matchers, ([official Git repo](https://github.com/thoughtbot/shoulda-matchers)), removed the assign_to matcher in version 2.0.0. We missed it dearly, enough to bring it back. This gem includes all of the current version of shoulda-matchers, and it adds the 'assign_to' matcher back in, just the way it was before it was mercilessly destroyed.
+Shoulda-matchers, ([official Git repo](https://github.com/thoughtbot/shoulda-matchers)), removed the assign_to matcher in version 2.0.0. We missed it dearly, enough to bring it back. This gem adds the 'assign_to' matcher back in, just the way it was before it was mercilessly destroyed.
 
 ## Example (from shoulda-matchers, v1.5)
 
@@ -26,8 +26,10 @@ end
 In Rails 3 and Bundler, add the following to your Gemfile:
 
 ```ruby
-group :test do
+group :development, :test do
+  gem "shoulda-matchers"
   gem "shoulda-kept-assign-to"
 end
+```
 
 Shoulda will automatically include matchers into the appropriate example groups.
